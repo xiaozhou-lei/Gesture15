@@ -21,13 +21,13 @@ enum STATE {
 enum GESTURE_TYPE {
     //% block=无
     None = 0,
-    //% block=向右
-    Right = 1,
-    //% block=向左
-    Left = 2,
-    //% block=向上
-    Up = 3,
     //% block=向下
+    Right = 1,
+    //% block=向上
+    Left = 2,
+    //% block=向右
+    Up = 3,
+    //% block=向左
     Down = 4,
     //% block=向前
     Forward = 5,
@@ -902,7 +902,7 @@ namespace Gesture9960 {
     /**
      * 使用手势传感器前，先进行初始化。
      */
-    //% blockId="gesture_init" block="初始化手势传感器"
+    //% blockId="gesture_init" block="初始化手势传感器 "
     export function init(){
         let apds9960 = new APDS9960();
         apds9960.pads9960_init();
