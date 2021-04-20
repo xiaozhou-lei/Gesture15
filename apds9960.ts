@@ -783,9 +783,10 @@ namespace Gesture9960 {
     */
     //% blockId=gesture_read block="读取手势值|%strip"
     //% advanced=true
-    export function reads(): number {
+    export function reads(): number{
         let num =new APDS9960();
-        num.read();
+        let nums = num.read();
+        return nums;
     }
 
 
