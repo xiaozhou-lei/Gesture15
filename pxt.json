@@ -1,18 +1,19 @@
 {
-    "name": "teenkit-apds9960",
-    "version": "0.0.1",
-    "description": "gesture recognition,apds9960",
+    "name": "sensors",
+    "version": "1.0.0",
+    "description": "PH2.0传感器",
+    "license": "MIT",
     "dependencies": {
         "core": "*",
-        "radio": "*"
+        "neopixel": "github:microsoft/pxt-neopixel/tree/v0.7.3",
+        "apds9960": "github:/Futurejason/Gesture23"
     },
     "files": [
         "README.md",
-        "apds9960.ts"
+        "main.ts",
+        "EMRGBLight.ts",
+		"_locales/zh/sensors-strings.json"
+		
     ],
-    "testFiles": [
-        "test.ts"
-    ],
-    "public": true,
-    "license": "MIT"
+    "public": true
 }
