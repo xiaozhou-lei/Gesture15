@@ -4,7 +4,7 @@
     "description": "gesture recognition,apds9960",
     "dependencies": {
         "core": "*",
-        "OLED": "github:futurejason/myoled"
+        "OLED": "github:Futurejason/myOLED"
     },  
     "files": [
         "README.md",
