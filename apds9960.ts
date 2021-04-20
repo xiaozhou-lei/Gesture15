@@ -46,78 +46,28 @@ namespace Gesture9960 {
     /* Error code for returned values */
     //ERROR = 0xFF
 
-    /* On/Off definitions */
-    let OFF = 0;
-    let ON = 1;
-
     /* Acceptable parameters for setMode */
     let POWER = 0
-    let AMBIENT_LIGHT = 1
     let PROXIMITY = 2
     let WAIT = 3
-    let AMBIENT_LIGHT_INT = 4
-    let PROXIMITY_INT = 5
     let GESTURE = 6
     let ALL = 7
 
     /* LED Drive values */
     let LED_DRIVE_100MA = 0
-    let LED_DRIVE_50MA = 1
-    let LED_DRIVE_25MA = 2
-    let LED_DRIVE_12_5MA = 3
-
-    /* Proximity Gain (PGAIN) values */
-    let PGAIN_1X = 0
-    let PGAIN_2X = 1
-    let PGAIN_4X = 2
-    let PGAIN_8X = 3
-
-    /* ALS Gain (AGAIN) values */
-    let AGAIN_1X = 0
-    let AGAIN_4X = 1
-    let AGAIN_16X = 2
-    let AGAIN_64X = 3
 
     /* Gesture Gain (GGAIN) values */
-    let GGAIN_1X = 0
-    let GGAIN_2X = 1
     let GGAIN_4X = 2
-    let GGAIN_8X = 3
 
     /* LED Boost values */
-    let LED_BOOST_100 = 0
-    let LED_BOOST_150 = 1
-    let LED_BOOST_200 = 2
     let LED_BOOST_300 = 3
 
     /* Gesture wait time values */
-    let GWTIME_0MS = 0
     let GWTIME_2_8MS = 1
-    let GWTIME_5_6MS = 2
-    let GWTIME_8_4MS = 3
-    let GWTIME_14_0MS = 4
-    let GWTIME_22_4MS = 5
-    let GWTIME_30_8MS = 6
-    let GWTIME_39_2MS = 7
+
 
     /* Default values */
-    let DEFAULT_ATIME = 219     // 103ms
-    let DEFAULT_WTIME = 246     // 27ms
-    let DEFAULT_PROX_PPULSE = 0x87    // 16us, 8 pulses
     let DEFAULT_GESTURE_PPULSE = 0x89    // 16us, 10 pulses
-    let DEFAULT_POFFSET_UR = 0       // 0 offset
-    let DEFAULT_POFFSET_DL = 0       // 0 offset      
-    let DEFAULT_CONFIG1 = 0x60    // No 12x wait (WTIME) factor
-    let DEFAULT_LDRIVE = LED_DRIVE_100MA
-    let DEFAULT_PGAIN = PGAIN_4X
-    let DEFAULT_AGAIN = AGAIN_4X
-    let DEFAULT_PILT = 0       // Low proximity threshold
-    let DEFAULT_PIHT = 50      // High proximity threshold
-    let DEFAULT_AILT = 0xFFFF  // Force interrupt for calibration
-    let DEFAULT_AIHT = 0
-    let DEFAULT_PERS = 0x11    // 2 consecutive prox or ALS for int.
-    let DEFAULT_CONFIG2 = 0x01    // No saturation interrupts or LED boost  
-    let DEFAULT_CONFIG3 = 0       // Enable all photodiodes, no SAI
     let DEFAULT_GPENTH = 40      // Threshold for entering gesture mode
     let DEFAULT_GEXTH = 30      // Threshold for exiting gesture mode    
     let DEFAULT_GCONF1 = 0x40    // 4 gesture events for int., 1 for exit
@@ -129,72 +79,9 @@ namespace Gesture9960 {
     let DEFAULT_GCONF3 = 0       // All photodiodes active during gesture
     let DEFAULT_GIEN = 0       // Disable gesture interrupts
 
-  /* APDS-9960 I2C address:0x39 */
+    /* APDS-9960 I2C address:0x39 */
 
 
-        /* APDS-9960 register addresses */
-       // APDS9960_ENABLE = 0x80
-       // APDS9960_ATIME = 0x81
-       // APDS9960_WTIME = 0x83
-       // APDS9960_AILTL = 0x84
-       // APDS9960_AILTH = 0x85
-        //APDS9960_AIHTL = 0x86
-        //APDS9960_AIHTH = 0x87
-        //APDS9960_PILT = 0x89
-        //APDS9960_PIHT = 0x8B
-        //APDS9960_PERS = 0x8C
-        //APDS9960_CONFIG1 = 0x8D
-        //APDS9960_PPULSE = 0x8E
-        //APDS9960_CONTROL = 0x8F
-        //APDS9960_CONFIG2 = 0x90
-        //APDS9960_ID = 0x92
-        //APDS9960_STATUS = 0x93
-        //APDS9960_CDATAL = 0x94
-        //APDS9960_CDATAH = 0x95
-        //APDS9960_RDATAL = 0x96
-        //APDS9960_RDATAH = 0x97
-        //APDS9960_GDATAL = 0x98
-        //APDS9960_GDATAH = 0x99
-        //APDS9960_BDATAL = 0x9A
-        //APDS9960_BDATAH = 0x9B
-        //APDS9960_PDATA = 0x9C
-        //APDS9960_POFFSET_UR = 0x9D
-        //APDS9960_POFFSET_DL = 0x9E
-        //APDS9960_CONFIG3 = 0x9F
-        //APDS9960_GPENTH = 0xA0
-        //APDS9960_GEXTH = 0xA1
-        //APDS9960_GCONF1 = 0xA2
-        //APDS9960_GCONF2 = 0xA3
-        //APDS9960_GOFFSET_U = 0xA4
-       // APDS9960_GOFFSET_D = 0xA5
-       // APDS9960_GOFFSET_L = 0xA7
-       // APDS9960_GOFFSET_R = 0xA9
-      //  APDS9960_GPULSE = 0xA6
-       // APDS9960_GCONF3 = 0xAA
-      //  APDS9960_GCONF4 = 0xAB
-      //  APDS9960_GFLVL = 0xAE
-      //  APDS9960_GSTATUS = 0xAF
-      //  APDS9960_IFORCE = 0xE4
-      //  APDS9960_PICLEAR = 0xE5
-      //  APDS9960_CICLEAR = 0xE6
-      //  APDS9960_AICLEAR = 0xE7
-      //  APDS9960_GFIFO_U = 0xFC
-      //  APDS9960_GFIFO_D = 0xFD
-      //  APDS9960_GFIFO_L = 0xFE
-      //  APDS9960_GFIFO_R = 0xFF
-
-        /* Bit fields */
-       // APDS9960_PON = 0b00000001
-       // APDS9960_AEN = 0b00000010
-      //  APDS9960_PEN = 0b00000100
-      //  APDS9960_WEN = 0b00001000
-      //  APSD9960_AIEN = 0b00010000
-      //  APDS9960_PIEN = 0b00100000
-      //  APDS9960_GEN = 0b01000000
-      //  APDS9960_GVALID = 0b00000001
-
-    /* Misc parameters */
-    let FIFO_PAUSE_TIME = 30      // Wait period (ms) between FIFO reads
 
 
     /* Container for gesture data */
@@ -213,10 +100,10 @@ namespace Gesture9960 {
 
     let data_buf: Buffer = pins.createBuffer(128);
 
-    export class APDS9960{
-      
+    export class APDS9960 {
 
-       
+
+
         gesture_ud_delta: number;
         gesture_lr_delta: number;
         gesture_ud_count: number;
@@ -856,13 +743,6 @@ namespace Gesture9960 {
             return motion;
         }
 
-
-
-        /**
-         * 读取手势数值，无手势：0；右：1；左：2；上：3；下：4；前进：5；后退：6
-         */
-        //% blockId=gesture_read block="读取手势值|%strip"
-        //% advanced=true
         read(): number {
             let result = GESTURE_TYPE.None;
             switch (this.readGesture()) {
@@ -898,12 +778,23 @@ namespace Gesture9960 {
 
     }//end class APDS9960
 
-    
+    /**
+    * 读取手势数值，无手势：0；右：1；左：2；上：3；下：4；前进：5；后退：6
+    */
+    //% blockId=gesture_read block="读取手势值|%strip"
+    //% advanced=true
+    export function reads(): number {
+        let num =new APDS9960();
+        num.read();
+    }
+
+
+
     /**
      * 使用手势传感器前，先进行初始化。
      */
     //% blockId="gesture_init" block="初始化手势传感器 "
-    export function init(){
+    export function init() {
         let apds9960 = new APDS9960();
         apds9960.pads9960_init();
         apds9960.enableGestureSensor(false);
@@ -914,7 +805,7 @@ namespace Gesture9960 {
             let prevGst = GESTURE_TYPE.None;
             while (true) {
                 let gst = apds9960.read();
-               // basic.showNumber(gst);
+                // basic.showNumber(gst);
                 if (gst != prevGst) {
                     prevGst = gst;
                     control.raiseEvent(3100, gst, EventCreationMode.CreateAndFire);
@@ -924,7 +815,7 @@ namespace Gesture9960 {
             }
 
         })
-       // return apds9960;
+        // return apds9960;
     }
 
 
@@ -936,7 +827,7 @@ namespace Gesture9960 {
     //% blockId="gesture_listener_block" block="检测手势|%gesture"
     export function onGesture(gesture: GESTURE_TYPE, handler: () => void) {
         control.onEvent(3100, gesture, handler);
-        
+
     }
 
 
@@ -946,5 +837,5 @@ namespace Gesture9960 {
 
 
 
-   
+
 }
