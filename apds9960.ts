@@ -778,17 +778,6 @@ namespace Gesture9960 {
 
     }//end class APDS9960
 
-    /**
-    * 读取手势数值，无手势：0；右：1；左：2；上：3；下：4；前进：5；后退：6
-    */
-    //% blockId=gesture_read block="读取手势值|%strip"
-    //% advanced=true
-    export function reads(): number{
-        let num =new APDS9960();
-        let nums = num.read();
-        return nums;
-    }
-
 
 
     /**
