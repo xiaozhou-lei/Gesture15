@@ -4,8 +4,7 @@
     "description": "gesture recognition,apds9960",
     "dependencies": {
         "core": "*",
-        "radio": "*",
-        "OLED12864_I2C": "https://github.com/Futurejason/myOLED.git"
+        "OLED": "github:futurejason/myoled"
     },  
     "files": [
         "README.md",
