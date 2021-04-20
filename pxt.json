@@ -5,8 +5,8 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "OLED12864_I2C": "github:Futurejason/myOLED"
-    },
+        "OLED12864_I2C": "github:futurejason/myoled"
+    },  
     "files": [
         "README.md",
         "apds9960.ts"
