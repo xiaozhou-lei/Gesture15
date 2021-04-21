@@ -10,9 +10,6 @@
         "README.md",
         "apds9960.ts"
     ],
-    "testFiles": [
-        "test.ts"
-    ],
     "public": true,
     "license": "MIT",
     "preferredEditor": "tsprj"
