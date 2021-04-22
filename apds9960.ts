@@ -800,7 +800,6 @@ namespace Gesture9960 {
                 if (gst != prevGst) {
                     prevGst = gst;
                     control.raiseEvent(3100, gst, EventCreationMode.CreateAndFire);
-
                 }
                 basic.pause(50);
             }
