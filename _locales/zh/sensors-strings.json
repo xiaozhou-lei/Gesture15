@@ -1,5 +1,0 @@
-{
-    "Gesture9960|block": "TEENKIT 手势传感器",
-    "Gesture9960.gesture_init|block": "初始化手势传感器",
-    "Gesture9960.gesture_listener_block|block": "检测手势|%gesture"
-}
