@@ -792,14 +792,14 @@ namespace Gesture9960 {
         basic.pause(100);
 
         //initiate gesture monitoring
-        control.inBackground(() => {
+        control.in_background(() => {
             let prevGst = GESTURE_TYPE.None;
             while (true) {
                 let gst = apds9960.read();
                 // basic.showNumber(gst);
                 if (gst != prevGst) {
                     prevGst = gst;
-                    control.raiseEvent(3100, gst, EventCreationMode.CreateAndFire);
+                    control.raise_event(3100, gst, EventCreationMode.CreateAndFire);
                 }
                 basic.pause(50);
             }
@@ -816,7 +816,7 @@ namespace Gesture9960 {
      */
     //% blockId="gesture_listener_block" block="Detect gestures|%gesture"
     export function onGesture(gesture: GESTURE_TYPE, handler: () => void) {
-        control.onEvent(3100, gesture, handler);
+        control.on_event(3100, gesture, handler);
 
     }
 
