@@ -36,7 +36,7 @@ enum GESTURE_TYPE {
 }
 
 
-//% weight=10 color=#ff6600 icon="\uf108" block="TEENKIT Gesture sensor"
+//% weight=10 color=#ff6600 icon="\uf108" block="TEENKIT 手势传感器"
 namespace Gesture9960 {
     /* Gesture parameters */
     let GESTURE_THRESHOLD_OUT = 30;
@@ -784,7 +784,7 @@ namespace Gesture9960 {
     /**
      * 使用手势传感器前，先进行初始化。
      */
-    //% blockId="gesture_init" block="Initialize the gesture sensor "
+    //% blockId="gesture_init" block="初始化手势传感器 "
     export function init() {
         let apds9960 = new APDS9960();
         apds9960.pads9960_init();
@@ -800,6 +800,7 @@ namespace Gesture9960 {
                 if (gst != prevGst) {
                     prevGst = gst;
                     control.raiseEvent(3100, gst, EventCreationMode.CreateAndFire);
+
                 }
                 basic.pause(50);
             }
@@ -814,7 +815,7 @@ namespace Gesture9960 {
      * @param gesture type of gesture to detect
      * @param handler code to run
      */
-    //% blockId="gesture_listener_block" block="Detect gestures|%gesture"
+    //% blockId="gesture_listener_block" block="检测手势|%gesture"
     export function onGesture(gesture: GESTURE_TYPE, handler: () => void) {
         control.onEvent(3100, gesture, handler);
 
