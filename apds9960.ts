@@ -815,10 +815,9 @@ namespace Gesture9960 {
      * @param gesture type of gesture to detect
      * @param handler code to run
      */
-    //% blockId="gesture_listener_block" block="检测手势|%gesture"
+    //% blockId="gesture_listener_block" block="Detect gestures|%gesture"
     export function onGesture(gesture: GESTURE_TYPE, handler: () => void) {
         control.onEvent(3100, gesture, handler);
-
     }
 
 
