@@ -2,6 +2,7 @@
     "name": "teenkit-apds9960",
     "version": "0.0.1",
     "description": "gesture recognition,apds9960",
+    "license": "MIT",
     "dependencies": {
         "core": "*",
         "radio": "*"
@@ -10,7 +11,5 @@
         "README.md",
         "apds9960.ts"
     ],
-    "public": true,
-    "license": "MIT",
-    "preferredEditor": "tsprj"
+    "public": true
 }
