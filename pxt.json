@@ -1,5 +1,5 @@
 {
-    "name": "teenkit-apds9960",
+    "name": "Gesture9960",
     "version": "0.0.1",
     "description": "gesture recognition,apds9960",
     "dependencies": {
