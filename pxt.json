@@ -3,8 +3,9 @@
     "version": "0.0.1",
     "description": "gesture recognition,apds9960",
     "dependencies": {
-        "core": "*",
-        "radio": "*"
+        "core": "*", 
+        "radio": "*",
+        "Sensorbit": "github:emakefun/pxt-sensorbit"
     },  
     "files": [
         "README.md",
