@@ -5,7 +5,7 @@
     "dependencies": {
         "core": "*", 
         "radio": "*",
-        "Sensorbit": "github:Futurejason/sensor_ok761"
+        "Sensorbit": "github:Futurejason/pxt-sensor"
     },  
     "files": [
         "README.md",
