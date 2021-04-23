@@ -784,7 +784,9 @@ namespace Gesture9960 {
     /**
      * 使用手势传感器前，先进行初始化。
      */
-    //% blockId="gesture_init" block="初始化手势传感器 "
+    //% weight=200 blockGap=8
+    //% blockId="gesture_init" block="Initialize the gesture sensor " group="apds手势传感器"
+    //% subcategory="智能模块"
     export function init() {
         let apds9960 = new APDS9960();
         apds9960.pads9960_init();
@@ -815,7 +817,9 @@ namespace Gesture9960 {
      * @param gesture type of gesture to detect
      * @param handler code to run
      */
-    //% blockId="gesture_listener_block" block="Detect gestures|%gesture"
+    //% weight=200 blockGap=8
+    //% blockId="gesture_listener_block" block="Detect gestures|%gesture" group="apds手势传感器"
+    //% subcategory="智能模块"
     export function onGesture(gesture: GESTURE_TYPE, handler: () => void) {
         control.onEvent(3100, gesture, handler);
     }
